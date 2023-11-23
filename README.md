@@ -12,7 +12,16 @@ MongoDB用APIを利用してAzure Cosmos DBに対するシンプルなCRUDを作
 
 ### 必要なライブラリのインストール
 
+```shell
+$ npm init -y
+$ npm install express mongoose body-parser dotenv --save
+```
+
 ### Azure CosmosDBの設定
+
+- Azure Portalにログインし、Cosmos DBアカウントを作成します。
+- 作成にあたり、APIオプションでMongoDB APIを選択します。
+- 必要な情報（URLとプライマリキー）を取得します。
 
 ### .envファイルの作成
 
@@ -32,8 +41,28 @@ COSMOSDB_PORT=10255
 
 ### メインロジックの作成
 
+```
+code .env
+code app.js
+```
+
 ### cURLによる動作確認
 
+```
+node app.js
+```
+```
+$ curl -X POST -H "Content-Type: application/json" -d '{"title":"test"}' http://localhost:3000/todos
+{"title":"test","_id":"655f6263d4943792bb3b4540","__v":0}
+```
+```
+$ curl -X GET http://localhost:3000/todos
+[{"_id":"655f6263d4943792bb3b4540","title":"test","__v":0}]
+```
+
+ついでにデータエクスプローラからも確認できます
+
+![Alt text](image.png)
 
 ## 最後に
 
