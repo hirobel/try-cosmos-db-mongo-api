@@ -5,8 +5,16 @@ MongoDB用APIを利用してAzure Cosmos DBに対するシンプルなCRUDを作
 
 ## 前提
 
+* Macを利用します
+
+```
+$ sw_vers
+ProductName:		macOS
+ProductVersion:		13.5.2
+BuildVersion:		22G91
+```
+
 * Azureのアカウントが作成されていること
-* 
 
 ## やってみたこと
 
@@ -25,6 +33,10 @@ $ npm install express mongoose body-parser dotenv --save
 
 ### .envファイルの作成
 
+```
+code .env
+```
+
 以下の内容を埋めた内容で作成します。
 
 ```.env
@@ -42,7 +54,6 @@ COSMOSDB_PORT=10255
 ### メインロジックの作成
 
 ```
-code .env
 code app.js
 ```
 
@@ -63,8 +74,6 @@ $ curl -X GET http://localhost:3000/todos
 ついでにデータエクスプローラからも確認できます
 
 ![Alt text](image.png)
-
-## 最後に
 
 ## 参考
 
